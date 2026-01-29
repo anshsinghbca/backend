@@ -6,8 +6,9 @@ const router = express.Router();
 let mockDataset = [
   { id: 1, name: "Ansh Singh", image: "https://randomuser.me/api/portraits/men/1.jpg" },
   { id: 2, name: "Akash Singh", image: "https://randomuser.me/api/portraits/men/2.jpg" },
-  { id: 1, name: "John doe", image: "https://randomuser.me/api/portraits/men/1.jpg" },
+  { id: 3, name: "John Doe", image: "https://randomuser.me/api/portraits/men/3.jpg" },
 ];
+
 
 
 router.get("/dataset", (req, res) => {

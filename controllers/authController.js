@@ -18,7 +18,7 @@ export const signupUser = async (req, res) => {
   }
 };
 
-// Login controller
+
 export const loginUser = async (req, res) => {
   try {
     const { phone, password } = req.body;

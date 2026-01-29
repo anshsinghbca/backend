@@ -12,7 +12,7 @@ router.get("/logs", getActivities);
 router.post("/log", saveActivity);
 router.delete("/logs", clearActivities);
 
-// ⭐ NEW RECENT LOGS ROUTE
+
 router.get("/recent", getRecentActivities);
 
 export default router;
