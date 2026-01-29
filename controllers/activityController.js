@@ -1,6 +1,5 @@
 import Activity from "../models/Activity.js";
 
-// Save new activity
 export const saveActivity = async (req, res) => {
   try {
     const { name, confidence, timestamp } = req.body;
@@ -19,7 +18,7 @@ export const saveActivity = async (req, res) => {
   }
 };
 
-// Get all activities
+
 export const getActivities = async (req, res) => {
   try {
     const logs = await Activity.find().sort({ createdAt: -1 });
@@ -29,7 +28,7 @@ export const getActivities = async (req, res) => {
   }
 };
 
-// Delete all logs
+
 export const clearActivities = async (req, res) => {
   try {
     await Activity.deleteMany({});
@@ -39,11 +38,11 @@ export const clearActivities = async (req, res) => {
   }
 };
 
-// ⭐ Get recent activities (last 7 days)
+
 export const getRecentActivities = async (req, res) => {
   try {
     const sevenDaysAgo = new Date();
-    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 30);
 
     const logs = await Activity.find({
       createdAt: { $gte: sevenDaysAgo }
